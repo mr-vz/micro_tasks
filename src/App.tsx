@@ -15,7 +15,7 @@ const PATH = {
     PAGE1: '/adidas',
     PAGE2: '/puma',
     PAGE3: '/abibas',
-
+    PAGE4: '/prices',
 } as const
 
 function App() {
@@ -27,7 +27,7 @@ function App() {
                     <S.NavWrapper><NavLink to={PATH.PAGE1}>Adidas</NavLink></S.NavWrapper>
                     <S.NavWrapper><NavLink to={PATH.PAGE2}>Puma</NavLink></S.NavWrapper>
                     <S.NavWrapper><NavLink to={PATH.PAGE3}>Abibas</NavLink></S.NavWrapper>
-
+                    <S.NavWrapper><NavLink to={PATH.PAGE4}>Prices for opts</NavLink></S.NavWrapper>
                 </div>
                 <div className={styles.content}>
                     <Routes>
@@ -36,6 +36,7 @@ function App() {
                         <Route path={PATH.PAGE1} element={<Adidas/>}/>
                         <Route path={PATH.PAGE2} element={<Puma/>}/>
                         <Route path={PATH.PAGE3} element={<Abibas/>}/>
+                        <Route path={PATH.PAGE4} element={<Prices/>}/>
 
                         {/*<Route path={'/adidas/:id'} element={<Model/>}/>*/}
                         <Route path={'/:model/:id'} element={<Model/>}/>
