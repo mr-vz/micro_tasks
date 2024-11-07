@@ -12,6 +12,7 @@ import {Prices} from "../components/pages/Prices";
 import {Model} from "../components/pages/Model";
 import {ProtectedPage} from "../components/pages/ProtectedPage";
 import {Login} from "../components/pages/Login";
+import {MicroTasks} from "../components/pages/Micro_tasks";
 
 const PATH = {
     ADIDAS: '/adidas',
@@ -21,7 +22,9 @@ const PATH = {
     PROTECTED: '/protected',
     MODEL: '/:model/:id',
     ERROR: '/error',
-    LOGIN: '/login'
+    LOGIN: '/login',
+    MICRO_TASKS: '/micro_tasks',
+    MAIN_PAGE: '/'
 } as const
 
 const publicRoutes: RouteObject[] = [
@@ -42,6 +45,10 @@ const publicRoutes: RouteObject[] = [
         element: <Prices />,
     },
     {
+        path: PATH.ERROR,
+        element: <Error404 />,
+    },
+    {
         path: PATH.MODEL,
         element: <Model />,
     },
@@ -50,9 +57,14 @@ const publicRoutes: RouteObject[] = [
         element: <Login />,
     },
     {
-        path: PATH.ERROR,
-        element: <Error404 />,
+        path: PATH.MICRO_TASKS,
+        element: <MicroTasks />,
     },
+    {
+        path: PATH.MAIN_PAGE,
+        element: <Adidas />,
+    },
+
 ]
 
 const privateRoutes: RouteObject[] = [
